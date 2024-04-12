@@ -1,0 +1,18 @@
+apiVersion: ec2.aws.crossplane.io/v1beta1
+kind: VPC
+metadata:
+  name: nashtech-vpc
+  labels:
+    resource: VPC
+spec:
+  forProvider:
+    cidrBlock: "10.0.0.0/16"
+    instanceTenancy: default
+    tags:
+    - key: Name
+      value: nashtech-vpc
+    enableDnsSupport: true
+    enableDnsHostnames: true
+    enableClassicLink: false
+    enableClassicLinkDnsSupport: false
+    deletionPolicy: Delete
